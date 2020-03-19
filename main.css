@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Satisfy');
+@import url('https://fonts.googleapis.com/css?family=Bellota&display=swap');
+
+* {
+    background-color: rgb(231, 198, 231);
+    text-align: center;
+}
+
+h1 {
+    font-family: "Satisfy";
+    font-size: 32px;
+}
+
+p {
+    font-family: 'Bellota', cursive;
+    font-size: 28px;
+}
+
+#roll,
+#startagain {
+    color: blueviolet;
+    font-size: 20px;
+    border-style: solid;
+    border-color: rgb(53, 52, 52);
+    border-radius: 10px;
+    border-width: 1.5px;
+    background-color: white;
+    padding: 5px;
+    position: fixed;
+} 
+
+#roll {
+    top: 50%;
+    left: 48%;
+}
+
+#startagain {
+    top: 55%;
+    left: 45%;
+}
+
+
+img {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(90, 88, 88);
+}
+
