@@ -1,79 +1,66 @@
-let totalScore, playingGame;
+const rollDice = document.getElementById("roll");
+const playAgain = document.getElementById("playAgain");
+const diceImage = document.getElementById("dice");
+const outcome = document.getElementById("outcome");
+let totalScore = document.getElementById("totalScore");
 
-let score = 0;
+let currentScore = 0;
+totalScore.textContent = 0;
+playAgain.style.display = "none";
 
-let theImages = [{
-    src: "dice1.png"
-}, {
-    src: "dice2.png",
-}, {
-    src: "dice3.png",
-}, {
-    src: "dice4.png",
-}, {
-    src: "dice5.png",
-}, {
-    src: "dice6.png",
-}];
 
-let diceImages = [];
-
-init();
-
-function showRandomImage() {
-    if (playingGame) {
-        theImages = [{
-            src: "dice1.png"
-        }, {
-            src: "dice2.png",
-        }, {
-            src: "dice3.png",
-        }, {
-            src: "dice4.png",
-        }, {
-            src: "dice5.png",
-        }, {
-            src: "dice6.png",
-        }];
-    }
-        let diceImages = [];
-        for (let i = 0, j = theImages.length; i < j; i++) {
-            diceImages[i] = new Image();
-            diceImages[i].src = theImages[i].src;
-        }
-
-        if(diceImages !== 1) {       
-            totalScore += diceImages;    
-        } else {
-            init();
-        }
+rollDice.addEventListener("click", function () {
+    console.log("roll button pressed");
     
-        function getRandomNumber(min, max) {
-            let img = Math.floor(Math.random() * (max - min + 1)) + min;
-            score = score + img;
-            return diceImages[img];
-        }
+    let randomNumber = Math.floor(Math.random() * 6 + 1);
 
-        let newImage = getRandomNumber(0, diceImages.length - 1);
-
-        let images = document.getElementsByTagName("img");
-        let x = images.length;
-        for (let y = 0; y < x; y++) {
-            images[0].parentNode.removeChild(images[0]);
-        }
-
-        document.body.appendChild(newImage);
-
+    if (randomNumber == 1) {
+        diceImage.src = "./dice1.png";
+    } else if (randomNumber == 2) {
+        diceImage.src = "./dice2.png";
+    } else if (randomNumber == 3) {
+        diceImage.src = "./dice3.png";
+    } else if (randomNumber == 4) {
+        diceImage.src = "./dice4.png";
+    } else if (randomNumber == 5) {
+        diceImage.src = "./dice5.png";
+    } else if (randomNumber == 6) {
+        diceImage.src = "./dice6.png";
     }
 
-    function init() {
-        playingGame = true;
-        score = [0];
-        roundScore = 0;
+    currentScore = currentScore + randomNumber;
+    totalScore.textContent = currentScore;
+
+    console.log("my Current Score is " + currentScore);
+    if (randomNumber == 1) {
+        document.getElementById("finalResult").style.display = "inline-block";
+        document.getElementById("finalResult").textContent = "You Lose!";
+        outcome.style.display = "none";
+        reset();
     }
 
-    document.querySelector('.die').style.display = 'none';
+    if (currentScore > 20) {
+        document.getElementById("finalResult").style.display = "inline-block";
+        document.getElementById("finalResult").textContent = "You Win! " + currentScore + " points";
+        outcome.style.display = "none";
+        reset ();
+    }
+});
 
-    // document.getElementById('#scoreZero').textContent = "0";
+playAgain.addEventListener("click", function () {
+    console.log("button pressed");
+    rollDice.style.display = "inline-block";
+    playAgain.style.display = "none";
+    document.getElementById("finalResult").style.display = "none";
+    outcome.style.display = "inline-block";
+});
 
+function reset () {
+    console.log("reset");
+    rollDice.style.display = "none";
+    playAgain.style.display = "inline-block";
+    currentScore = 0;
+    totalScore.textContent = 0;
 
+    
+}

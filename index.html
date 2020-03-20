@@ -10,23 +10,24 @@
 
 <body>
     <h1>Dice Game</h1>
-    <p>Roll the die to begin the game. If your score passes 20, you win.</p>
+    <p>Roll the dice to begin the game. If your score passes 20, you win.</p>
     <p>But roll a 1 and you lose...</p>
 
-    <div class="playerScore">Current Score</div>
-    <div class="playerScoreTotal">0</div>
-
+  
     <div>
-        <button id="startagain">Start Again</button>
+        
+        <button id="roll">Roll</button>
     </div>
 
+    <img src="dice4.png" alt="Die" class="die" id="dice">
+
     <div>
-        <button id="roll" onclick="showRandomImage();">Roll</button>
-    </div>
-
-    <!-- <input type="text" id="winningScore" placeholder="Final score"> -->
-
-    <img src="dice4.png" alt="Die" class="die" id="die1">
+        <!-- <button onclick="playAgain"()>Start Again</button> -->
+        <button id="playAgain">Start Again </button>
+        <h1 id="outcome">Current Score:
+         <span id="totalScore">0</span></h1>
+        <h1 id="finalResult"></h1>
+    </div> 
 
     <script src="script.js"></script>
 </body>
