@@ -11,7 +11,7 @@ playAgain.style.display = "none";
 
 rollDice.addEventListener("click", function () {
     console.log("roll button pressed");
-    
+
     let randomNumber = Math.floor(Math.random() * 6 + 1);
 
     if (randomNumber == 1) {
@@ -33,17 +33,17 @@ rollDice.addEventListener("click", function () {
 
     console.log("my Current Score is " + currentScore);
     if (randomNumber == 1) {
-        document.getElementById("finalResult").style.display = "inline-block";
-        document.getElementById("finalResult").textContent = "You Lose!";
+        finalResult.style.display = "inline-block";
+        finalResult.textContent = "You Lose!";
         outcome.style.display = "none";
         reset();
     }
 
     if (currentScore > 20) {
-        document.getElementById("finalResult").style.display = "inline-block";
-        document.getElementById("finalResult").textContent = "You Win! " + currentScore + " points";
+        finalResult.style.display = "inline-block";
+        finalResult.textContent = "You Win! You have " + currentScore + " points!";
         outcome.style.display = "none";
-        reset ();
+        reset();
     }
 });
 
@@ -51,16 +51,16 @@ playAgain.addEventListener("click", function () {
     console.log("button pressed");
     rollDice.style.display = "inline-block";
     playAgain.style.display = "none";
-    document.getElementById("finalResult").style.display = "none";
+    finalResult.style.display = "none";
     outcome.style.display = "inline-block";
 });
 
-function reset () {
+function reset() {
     console.log("reset");
     rollDice.style.display = "none";
     playAgain.style.display = "inline-block";
     currentScore = 0;
     totalScore.textContent = 0;
 
-    
+
 }

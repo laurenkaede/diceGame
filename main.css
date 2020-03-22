@@ -1,25 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Satisfy');
 @import url('https://fonts.googleapis.com/css?family=Bellota&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap');
 
 * {
-    background-color: rgb(231, 198, 231);
     text-align: center;
 }
 
+body {
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    height: 100vh;
+}
+
 h1 {
-    font-family: "Satisfy";
+    font-family: 'Bellota', cursive;
     font-size: 32px;
+    text-shadow: 2px 2px #998a99;
 }
 
 p {
-    font-family: 'Bellota', cursive;
+    font-family: 'Rajdhani', sans-serif;
     font-size: 28px;
 }
 
 #roll,
-#startagain {
+#playAgain {
     color: blueviolet;
-    font-size: 20px;
+    text-shadow: 2px 2px #ddd7dd;
+    font-size: 26px;
     border-style: solid;
     border-color: rgb(53, 52, 52);
     border-radius: 10px;
@@ -31,14 +37,14 @@ p {
 
 #roll {
     top: 60%;
-    left: 47%;
-    position: fixed;
+    left: 48%;
+    position: absolute;
 }
 
-#startagain {
-    top: 55%;
-    left: 43%;
-    position: fixed;
+#playAgain {
+    top: 60%;
+    left: 45%;
+    position: absolute;
 }
 
 
